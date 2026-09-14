@@ -1,0 +1,283 @@
+/* ==========================================================================
+   TeakaLearn Quiz Engine - Material You Orange Dark Theme
+   Features: Micro-interactions, Bouncy Pop Dynamics, Zero Tap Highlight
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Orange Tone Material You (Dark Mode) */
+  --tq-bg-surface: #19120c;
+  --tq-bg-container: #261d15;
+  --tq-bg-container-high: #33271d;
+  --tq-bg-container-highest: #403226;
+  
+  --tq-primary: #ffb77c;
+  --tq-on-primary: #4d2600;
+  --tq-primary-container: #6d3900;
+  --tq-on-primary-container: #ffdcbe;
+  
+  --tq-secondary: #e6beac;
+  --tq-secondary-container: #574236;
+  
+  --tq-text-primary: #f0dfd6;
+  --tq-text-secondary: #d7c2b5;
+  --tq-text-muted: #9f8d83;
+  --tq-border-color: #52443b;
+
+  --tq-color-success: #81d898;
+  --tq-color-error: #ffb4ab;
+
+  /* Timing & Easing */
+  --tq-spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --tq-transition-fast: 0.15s var(--tq-spring-bounce);
+  --tq-transition-smooth: 0.25s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Reset Tap Highlight Global */
+* {
+  -webkit-tap-highlight-color: transparent !important;
+  user-select: none;
+}
+
+/* Base Wrapper */
+.tq-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Top Navigation Bar */
+.tq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.tq-progress {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--tq-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tq-badge-type {
+  background: var(--tq-primary-container);
+  color: var(--tq-on-primary-container);
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  animation: popIn 0.3s var(--tq-spring-bounce);
+}
+
+/* Quiz Card Frame */
+.tq-card {
+  background: var(--tq-bg-container);
+  border: 1px solid var(--tq-border-color);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  animation: slideFadeIn 0.35s var(--tq-transition-smooth);
+}
+
+/* Question Area */
+.tq-question {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--tq-text-primary);
+  margin-bottom: 24px;
+  user-select: text;
+}
+
+.tq-question p {
+  margin-bottom: 12px;
+}
+
+.tq-question p:last-child {
+  margin-bottom: 0;
+}
+
+/* Options Container */
+.tq-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Interactive Option Item */
+.tq-option {
+  position: relative;
+  background: var(--tq-bg-container-high);
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  color: var(--tq-text-primary);
+  font-size: 1rem;
+  transition: transform var(--tq-transition-fast), 
+              border-color var(--tq-transition-smooth), 
+              background-color var(--tq-transition-smooth);
+  will-change: transform;
+}
+
+/* Active / Click Pop Effect */
+.tq-option:active {
+  transform: scale(0.96);
+}
+
+.tq-option:hover {
+  background: var(--tq-bg-container-highest);
+}
+
+/* Selected State */
+.tq-option.selected {
+  background: var(--tq-primary-container);
+  border-color: var(--tq-primary);
+  color: var(--tq-on-primary-container);
+  animation: selectPop 0.25s var(--tq-spring-bounce);
+}
+
+/* Indicator Circle/Square */
+.tq-control-indicator {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--tq-text-muted);
+  flex-shrink: 0;
+  transition: all var(--tq-transition-fast);
+  position: relative;
+}
+
+.tq-option.multiple .tq-control-indicator {
+  border-radius: 6px;
+}
+
+.tq-option.selected .tq-control-indicator {
+  border-color: var(--tq-primary);
+  background: var(--tq-primary);
+}
+
+.tq-option.selected .tq-control-indicator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 8px;
+  height: 8px;
+  background: var(--tq-on-primary);
+  border-radius: inherit;
+  animation: popIn 0.2s var(--tq-spring-bounce);
+}
+
+/* Action Buttons */
+.tq-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.tq-btn {
+  background: var(--tq-primary);
+  color: var(--tq-on-primary);
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--tq-transition-fast), 
+              background-color var(--tq-transition-smooth),
+              opacity var(--tq-transition-smooth);
+  box-shadow: 0 4px 12px rgba(255, 183, 124, 0.15);
+}
+
+.tq-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.tq-btn:active:not(:disabled) {
+  transform: scale(0.92);
+}
+
+.tq-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.tq-btn-secondary {
+  background: var(--tq-secondary-container);
+  color: var(--tq-secondary);
+  box-shadow: none;
+}
+
+.tq-btn-secondary:hover:not(:disabled) {
+  background: var(--tq-bg-container-highest);
+}
+
+/* Score Summary Card */
+.tq-score-card {
+  text-align: center;
+  animation: popIn 0.4s var(--tq-spring-bounce);
+}
+
+.tq-score-card h2 {
+  font-size: 1.8rem;
+  color: var(--tq-primary);
+  margin-bottom: 8px;
+}
+
+.tq-score-val {
+  font-weight: 800;
+  color: var(--tq-primary);
+  letter-spacing: -1px;
+}
+
+/* Keyframe Animations */
+@keyframes selectPop {
+  0% { transform: scale(0.97); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideFadeIn {
+  0% { transform: translateY(12px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .tq-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .tq-option {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+  }
+  
+  .tq-btn {
+    padding: 12px 20px;
+    flex: 1;
+  }
+}
+

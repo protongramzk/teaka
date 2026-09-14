@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matematika Wajib Paket 1 - TeakaLearn</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols Outlined (Google Icons) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" />
+
+  <!-- KaTeX CSS (Rendering Rumus Matematika) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+
+  <style>
+    /* =========================================================
+       1. VARIABLES & THEMING (Material You M3 Dark Orange)
+       ========================================================= */
+    :root {
+      --md-sys-color-background: #19120c;
+      --md-sys-color-surface: #261d15;
+      --md-sys-color-surface-container: #33271d;
+      --md-sys-color-surface-container-high: #403226;
+      --md-sys-color-surface-container-highest: #4d3d30;
+
+      --md-sys-color-primary: #ffb77c;
+      --md-sys-color-on-primary: #4d2600;
+      --md-sys-color-primary-container: #6d3900;
+      --md-sys-color-on-primary-container: #ffdcbe;
+
+      --md-sys-color-secondary-container: #574236;
+      --md-sys-color-on-secondary-container: #e6beac;
+
+      --md-sys-color-error: #ffb4ab;
+      --md-sys-color-on-error: #690005;
+
+      --md-sys-color-on-background: #f0dfd6;
+      --md-sys-color-on-surface: #d7c2b5;
+      --md-sys-color-on-surface-variant: #9f8d83;
+      --md-sys-color-outline: #52443b;
+      --md-sys-color-outline-variant: #3a2e26;
+
+      --radius-s: 8px;
+      --radius-m: 12px;
+      --radius-l: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+
+      --fast-transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      --smooth-transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent !important;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--md-sys-color-background);
+      color: var(--md-sys-color-on-background);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .material-symbols-outlined {
+      font-size: 20px;
+      vertical-align: middle;
+    }
+
+    /* TOP BAR */
+    .top-app-bar {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      background: rgba(25, 18, 12, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    }
+
+    .btn-back {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      color: var(--md-sys-color-primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .timer-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--md-sys-color-surface-container-high);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--md-sys-color-primary);
+    }
+
+    /* MAIN CONTAINER */
+    .quiz-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    /* PROGRESS BAR */
+    .quiz-progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--md-sys-color-on-surface-variant);
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background-color: var(--md-sys-color-surface-container-high);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background-color: var(--md-sys-color-primary);
+      border-radius: var(--radius-full);
+      transition: width 0.3s ease;
+    }
+
+    /* QUESTION CARD */
+    .question-card {
+      background-color: var(--md-sys-color-surface);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      border: 1px solid var(--md-sys-color-outline-variant);
+      margin-bottom: 24px;
+    }
+
+    .question-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--md-sys-color-primary-container);
+      color: var(--md-sys-color-on-primary-container);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-s);
+      margin-bottom: 16px;
+    }
+
+    .question-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.6;
+      color: var(--md-sys-color-on-background);
+      margin-bottom: 20px;
+    }
+
+    /* OPTIONS */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      border-radius: var(--radius-l);
+      background-color: var(--md-sys-color-surface-container);
+      border: 1.5px solid var(--md-sys-color-outline-variant);
+      cursor: pointer;
+      transition: var(--fast-transition);
+    }
+
+    .option-item:hover {
+      background-color: var(--md-sys-color-surface-container-high);
+      border-color: var(--md-sys-color-outline);
+    }
+
+    .option-item.selected {
+      background-color: var(--md-sys-color-primary-container);
+      border-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary-container);
+    }
+
+    .option-key {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      background-color: var(--md-sys-color-surface-container-highest);
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: var(--md-sys-color-on-surface);
+      flex-shrink: 0;
+    }
+
+    .option-item.selected .option-key {
+      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+    }
+
+    .option-val {
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* NAV BUTTONS */
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .btn-m3 {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+      transition: var(--fast-transition);
+    }
+
+    .btn-m3:hover {
+      filter: brightness(1.08);
+      transform: translateY(-2px);
+    }
+
+    .btn-m3:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      transform: none !important;
+      filter: none !important;
+    }
+
+    .btn-m3-tonal {
+      background-color: var(--md-sys-color-secondary-container);
+      color: var(--md-sys-color-on-secondary-container);
+    }
+
+    /* RESULT MODAL CONTAINER */
+    .result-container {
+      display: none;
+      background-color: var(--md-sys-color-surface);
+      border-radius: var(--radius-xl);
+      padding: 32px 24px;
+      border: 1px solid var(--md-sys-color-outline-variant);
+      text-align: center;
+      animation: fadeInUp 0.4s var(--smooth-transition);
+    }
+
+    .result-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .score-badge {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--md-sys-color-primary);
+      margin: 16px 0;
+      line-height: 1;
+    }
+
+    .score-detail {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .score-detail-item {
+      background: var(--md-sys-color-surface-container);
+      padding: 12px 20px;
+      border-radius: var(--radius-m);
+    }
+
+    .score-detail-val {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .score-detail-lbl {
+      font-size: 0.75rem;
+      color: var(--md-sys-color-on-surface-variant);
+      font-weight: 600;
+    }
+
+    .katex {
+      font-size: 1.05em;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="top-app-bar">
+    <a href="../index.html" class="btn-back">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Keluar Kuis
+    </a>
+    <div class="timer-badge">
+      <span class="material-symbols-outlined">schedule</span>
+      <span id="timer-display">30:00</span>
+    </div>
+  </header>
+
+  <!-- MAIN QUIZ AREA -->
+  <main class="quiz-container">
+    
+    <!-- QUIZ VIEW -->
+    <div id="quiz-view">
+      <div class="quiz-progress-header">
+        <span id="progress-text">Soal 1 dari 10</span>
+        <span id="answered-text">Terjawab: 0/10</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-bar"></div>
+      </div>
+
+      <div class="question-card">
+        <div class="question-tag" id="q-category">Trigonometri</div>
+        <div class="question-text" id="q-text">Loading soal...</div>
+        <div class="options-list" id="q-options"></div>
+      </div>
+
+      <div class="quiz-nav">
+        <button class="btn-m3 btn-m3-tonal" id="btn-prev" onclick="prevQuestion()" disabled>
+          <span class="material-symbols-outlined">arrow_back</span>
+          Sebelumnya
+        </button>
+        <button class="btn-m3" id="btn-next" onclick="nextQuestion()">
+          Selanjutnya
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- RESULT VIEW -->
+    <div id="result-view" class="result-container">
+      <span class="material-symbols-outlined" style="font-size: 48px; color: var(--md-sys-color-primary);">emoji_events</span>
+      <h2 class="result-title">Kuis Selesai!</h2>
+      <p style="color: var(--md-sys-color-on-surface-variant); font-size: 0.9rem;">Berikut adalah akumulasi hasil latihan kamu:</p>
+
+      <div class="score-badge" id="res-score-800">0</div>
+      <p style="font-size: 0.8rem; font-weight: 700; color: var(--md-sys-color-on-surface-variant); margin-top: -12px; margin-bottom: 24px;">ESTIMASI SKOR UTBK / TKA</p>
+
+      <div class="score-detail">
+        <div class="score-detail-item">
+          <div class="score-detail-val" id="res-correct" style="color: #81c784;">0</div>
+          <div class="score-detail-lbl">Benar</div>
+        </div>
+        <div class="score-detail-item">
+          <div class="score-detail-val" id="res-wrong" style="color: var(--md-sys-color-error);">0</div>
+          <div class="score-detail-lbl">Salah / Kosong</div>
+        </div>
+        <div class="score-detail-item">
+          <div class="score-detail-val" id="res-accuracy">0%</div>
+          <div class="score-detail-lbl">Akurasi</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <a href="../index.html" class="btn-m3">
+          <span class="material-symbols-outlined">home</span>
+          Dashboard
+        </a>
+        <button onclick="location.reload()" class="btn-m3 btn-m3-tonal">
+          <span class="material-symbols-outlined">refresh</span>
+          Coba Lagi
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- KaTeX Script -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+
+  <script>
+    /* =========================================================
+       DATA SOAL QUIZ (MTK WAJIB PAKET 1)
+       ========================================================= */
+    const questions = [
+      // --- TRIGONOMETRI ---
+      {
+        category: "Trigonometri",
+        question: "Diketahui $\\sin \\theta = \\frac{3}{5}$ dengan $\\theta$ berada di kuadran II. Nilai dari $\\cos \\theta \\cdot \\tan \\theta$ adalah...",
+        options: [
+          "$\\frac{3}{5}$",
+          "$-\\frac{3}{5}$",
+          "$\\frac{4}{5}$",
+          "$-\\frac{4}{5}$",
+          "$\\frac{9}{25}$"
+        ],
+        answer: 0 // A
+      },
+      {
+        category: "Trigonometri",
+        question: "Bentuk sederhana dari $\\frac{\\sin 2x}{1 + \\cos 2x}$ adalah...",
+        options: [
+          "$\\sin x$",
+          "$\\cos x$",
+          "$\\tan x$",
+          "$\\cot x$",
+          "$\\sec x$"
+        ],
+        answer: 2 // C
+      },
+      {
+        category: "Trigonometri",
+        question: "Jika $\\cos A = \\frac{12}{13}$ dan $A$ sudut lancip, nilai dari $\\sin 2A$ adalah...",
+        options: [
+          "$\\frac{120}{169}$",
+          "$\\frac{60}{169}$",
+          "$\\frac{25}{169}$",
+          "$\\frac{119}{169}$",
+          "$\\frac{144}{169}$"
+        ],
+        answer: 0 // A
+      },
+
+      // --- KOMPOSISI FUNGSI ---
+      {
+        category: "Komposisi Fungsi",
+        question: "Diketahui fungsi $f(x) = 2x - 3$ dan $g(x) = x^2 + 4x - 1$. Rumus fungsi komposisi $(g \\circ f)(x)$ adalah...",
+        options: [
+          "$4x^2 - 4x - 4$",
+          "$4x^2 - 4x - 2$",
+          "$4x^2 - 12x + 8$",
+          "$2x^2 + 8x - 5$",
+          "$4x^2 + 8x - 4$"
+        ],
+        answer: 0 // A
+      },
+      {
+        category: "Komposisi Fungsi",
+        question: "Diketahui $(f \\circ g)(x) = 6x + 9$ dan $g(x) = 2x + 1$. Fungsi $f(x)$ adalah...",
+        options: [
+          "$3x + 6$",
+          "$3x + 3$",
+          "$3x - 6$",
+          "$6x + 3$",
+          "$2x + 6$"
+        ],
+        answer: 0 // A
+      },
+
+      // --- TRANSFORMASI FUNGSI ---
+      {
+        category: "Transformasi Fungsi",
+        question: "Grafik fungsi $y = f(x)$ digeser sejauh 3 satuan ke kanan dan 2 satuan ke atas. Persamaan grafik hasil transformasi tersebut adalah...",
+        options: [
+          "$y = f(x - 3) + 2$",
+          "$y = f(x + 3) + 2$",
+          "$y = f(x - 3) - 2$",
+          "$y = f(x + 3) - 2$",
+          "$y = f(x + 2) - 3$"
+        ],
+        answer: 0 // A
+      },
+      {
+        category: "Transformasi Fungsi",
+        question: "Jika kurva $y = x^2 - 4x + 3$ dicerminkan terhadap sumbu-$X$, maka persamaan bayangannya adalah...",
+        options: [
+          "$y = -x^2 + 4x - 3$",
+          "$y = -x^2 - 4x + 3$",
+          "$y = x^2 + 4x + 3$",
+          "$y = x^2 - 4x - 3$",
+          "$y = -x^2 - 4x - 3$"
+        ],
+        answer: 0 // A
+      },
+
+      // --- INVERS FUNGSI ---
+      {
+        category: "Invers Fungsi",
+        question: "Diketahui $f(x) = \\frac{2x + 5}{3x - 4}$ untuk $x \\neq \\frac{4}{3}$. Invers dari fungsi $f(x)$ adalah $f^{-1}(x) = ...$",
+        options: [
+          "$\\frac{4x + 5}{3x - 2}$",
+          "$\\frac{4x - 5}{3x - 2}$",
+          "$\\frac{2x - 5}{3x + 4}$",
+          "$\\frac{3x + 4}{2x - 5}$",
+          "$\\frac{4x + 5}{2x - 3}$"
+        ],
+        answer: 0 // A
+      },
+      {
+        category: "Invers Fungsi",
+        question: "Jika $f(x) = 3x - 7$, nilai dari $f^{-1}(8)$ adalah...",
+        options: [
+          "$5$",
+          "$4$",
+          "$3$",
+          "$2$",
+          "$1$"
+        ],
+        answer: 0 // A
+      },
+      {
+        category: "Invers Fungsi",
+        question: "Diketahui $f(x) = \\sqrt{2x + 6}$. Invers fungsi $f^{-1}(x)$ adalah...",
+        options: [
+          "$\\frac{x^2 - 6}{2}$",
+          "$\\frac{x^2 + 6}{2}$",
+          "$2x^2 - 6$",
+          "$2x^2 + 6$",
+          "$\\frac{(x - 6)^2}{2}$"
+        ],
+        answer: 0 // A
+      }
+    ];
+
+    /* =========================================================
+       QUIZ ENGINE LOGIC
+       ========================================================= */
+    const QUIZ_ID = "mtk-wajib-1";
+    let currentIdx = 0;
+    let userAnswers = new Array(questions.length).fill(null);
+    let timerSeconds = 30 * 60; // 30 Menit
+    let timerInterval = null;
+
+    // Helper render KaTeX
+    function renderLaTeX(text) {
+      const mathBlocks = [];
+      let prep = text.replace(/\$\$([\s\S]+?)\$\$/g, (match, formula) => {
+        mathBlocks.push({ type: 'display', formula });
+        return `%%%MATH_${mathBlocks.length - 1}%%%`;
+      });
+
+      prep = prep.replace(/\$([^\$\n]+?)\$/g, (match, formula) => {
+        mathBlocks.push({ type: 'inline', formula });
+        return `%%%MATH_${mathBlocks.length - 1}%%%`;
+      });
+
+      let html = prep;
+      html = html.replace(/%%%MATH_(\d+)%%%/g, (match, index) => {
+        const block = mathBlocks[index];
+        try {
+          return katex.renderToString(block.formula, {
+            displayMode: block.type === 'display',
+            throwOnError: false
+          });
+        } catch (e) {
+          return block.formula;
+        }
+      });
+
+      return html;
+    }
+
+    // Render Question
+    function renderQuestion() {
+      const q = questions[currentIdx];
+      document.getElementById('q-category').innerText = q.category;
+      document.getElementById('q-text').innerHTML = renderLaTeX(q.question);
+
+      const keys = ['A', 'B', 'C', 'D', 'E'];
+      const optionsContainer = document.getElementById('q-options');
+      optionsContainer.innerHTML = '';
+
+      q.options.forEach((optText, i) => {
+        const isSelected = userAnswers[currentIdx] === i;
+        const optEl = document.createElement('div');
+        optEl.className = `option-item ${isSelected ? 'selected' : ''}`;
+        optEl.onclick = () => selectOption(i);
+
+        optEl.innerHTML = `
+          <div class="option-key">${keys[i]}</div>
+          <div class="option-val">${renderLaTeX(optText)}</div>
+        `;
+        optionsContainer.appendChild(optEl);
+      });
+
+      // Update Header Progress
+      document.getElementById('progress-text').innerText = `Soal ${currentIdx + 1} dari ${questions.length}`;
+      const filledCount = userAnswers.filter(a => a !== null).length;
+      document.getElementById('answered-text').innerText = `Terjawab: ${filledCount}/${questions.length}`;
+      document.getElementById('progress-bar').style.width = `${((currentIdx + 1) / questions.length) * 100}%`;
+
+      // Update Nav Buttons
+      document.getElementById('btn-prev').disabled = currentIdx === 0;
+      
+      const btnNext = document.getElementById('btn-next');
+      if (currentIdx === questions.length - 1) {
+        btnNext.innerHTML = `Selesai <span class="material-symbols-outlined">check_circle</span>`;
+      } else {
+        btnNext.innerHTML = `Selanjutnya <span class="material-symbols-outlined">arrow_forward</span>`;
+      }
+    }
+
+    function selectOption(index) {
+      userAnswers[currentIdx] = index;
+      renderQuestion();
+    }
+
+    function prevQuestion() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderQuestion();
+      }
+    }
+
+    function nextQuestion() {
+      if (currentIdx < questions.length - 1) {
+        currentIdx++;
+        renderQuestion();
+      } else {
+        finishQuiz();
+      }
+    }
+
+    // Timer Logic
+    function startTimer() {
+      timerInterval = setInterval(() => {
+        timerSeconds--;
+        const mins = Math.floor(timerSeconds / 60);
+        const secs = timerSeconds % 60;
+        document.getElementById('timer-display').innerText = 
+          `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+
+        if (timerSeconds <= 0) {
+          clearInterval(timerInterval);
+          finishQuiz();
+        }
+      }, 1000);
+    }
+
+    // Kalkulasi Skor (Standard TKA / UTBK 200 - 800)
+    function finishQuiz() {
+      clearInterval(timerInterval);
+
+      let correctCount = 0;
+      questions.forEach((q, i) => {
+        if (userAnswers[i] === q.answer) {
+          correctCount++;
+        }
+      });
+
+      const total = questions.length;
+      const wrongCount = total - correctCount;
+      const accuracy = Math.round((correctCount / total) * 100);
+
+      // Rumus estimasi UTBK 200 - 800
+      const score800 = Math.round(200 + (accuracy / 100) * 600);
+
+      // Save to localStorage
+      saveQuizHistory(QUIZ_ID, {
+        score800: score800,
+        correctCount: correctCount,
+        total: total,
+        accuracy: accuracy,
+        timestamp: new Date().toISOString()
+      });
+
+      // Show Result View
+      document.getElementById('quiz-view').style.display = 'none';
+      document.getElementById('result-view').style.display = 'block';
+
+      document.getElementById('res-score-800').innerText = score800;
+      document.getElementById('res-correct').innerText = correctCount;
+      document.getElementById('res-wrong').innerText = wrongCount;
+      document.getElementById('res-accuracy').innerText = `${accuracy}%`;
+    }
+
+    function saveQuizHistory(quizId, scoreData) {
+      try {
+        const history = JSON.parse(localStorage.getItem('teaka_quiz_history') || '{}');
+        history[quizId] = {
+          scores: scoreData
+        };
+        localStorage.setItem('teaka_quiz_history', JSON.stringify(history));
+      } catch (e) {
+        console.error("Gagal menyimpan ke LocalStorage:", e);
+      }
+    }
+
+    // Init Engine
+    renderQuestion();
+    startTimer();
+  </script>
+</body>
+</html>

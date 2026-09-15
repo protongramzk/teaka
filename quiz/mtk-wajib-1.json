@@ -1,0 +1,122 @@
+[
+  {
+    "category": "Trigonometri",
+    "question": "Diketahui $\\sin \\theta = \\frac{3}{5}$ dengan $\\theta$ berada di kuadran II. Nilai dari $\\cos \\theta \\cdot \\tan \\theta$ adalah...",
+    "options": [
+      "$\\frac{3}{5}$",
+      "$-\\frac{3}{5}$",
+      "$\\frac{4}{5}$",
+      "$-\\frac{4}{5}$",
+      "$\\frac{9}{25}$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Trigonometri",
+    "question": "Bentuk sederhana dari $\\frac{\\sin 2x}{1 + \\cos 2x}$ adalah...",
+    "options": [
+      "$\\sin x$",
+      "$\\cos x$",
+      "$\\tan x$",
+      "$\\cot x$",
+      "$\\sec x$"
+    ],
+    "answer": 2
+  },
+  {
+    "category": "Trigonometri",
+    "question": "Jika $\\cos A = \\frac{12}{13}$ dan $A$ sudut lancip, nilai dari $\\sin 2A$ adalah...",
+    "options": [
+      "$\\frac{120}{169}$",
+      "$\\frac{60}{169}$",
+      "$\\frac{25}{169}$",
+      "$\\frac{119}{169}$",
+      "$\\frac{144}{169}$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Komposisi Fungsi",
+    "question": "Diketahui fungsi $f(x) = 2x - 3$ dan $g(x) = x^2 + 4x - 1$. Rumus fungsi komposisi $(g \\circ f)(x)$ adalah...",
+    "options": [
+      "$4x^2 - 4x - 4$",
+      "$4x^2 - 4x - 2$",
+      "$4x^2 - 12x + 8$",
+      "$2x^2 + 8x - 5$",
+      "$4x^2 + 8x - 4$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Komposisi Fungsi",
+    "question": "Diketahui $(f \\circ g)(x) = 6x + 9$ dan $g(x) = 2x + 1$. Fungsi $f(x)$ adalah...",
+    "options": [
+      "$3x + 6$",
+      "$3x + 3$",
+      "$3x - 6$",
+      "$6x + 3$",
+      "$2x + 6$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Transformasi Fungsi",
+    "question": "Grafik fungsi $y = f(x)$ digeser sejauh 3 satuan ke kanan dan 2 satuan ke atas. Persamaan grafik hasil transformasi tersebut adalah...",
+    "options": [
+      "$y = f(x - 3) + 2$",
+      "$y = f(x + 3) + 2$",
+      "$y = f(x - 3) - 2$",
+      "$y = f(x + 3) - 2$",
+      "$y = f(x + 2) - 3$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Transformasi Fungsi",
+    "question": "Jika kurva $y = x^2 - 4x + 3$ dicerminkan terhadap sumbu-$X$, maka persamaan bayangannya adalah...",
+    "options": [
+      "$y = -x^2 + 4x - 3$",
+      "$y = -x^2 - 4x + 3$",
+      "$y = x^2 + 4x + 3$",
+      "$y = x^2 - 4x - 3$",
+      "$y = -x^2 - 4x - 3$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Invers Fungsi",
+    "question": "Diketahui $f(x) = \\frac{2x + 5}{3x - 4}$ untuk $x \\neq \\frac{4}{3}$. Invers dari fungsi $f(x)$ adalah $f^{-1}(x) = ...$",
+    "options": [
+      "$\\frac{4x + 5}{3x - 2}$",
+      "$\\frac{4x - 5}{3x - 2}$",
+      "$\\frac{2x - 5}{3x + 4}$",
+      "$\\frac{3x + 4}{2x - 5}$",
+      "$\\frac{4x + 5}{2x - 3}$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Invers Fungsi",
+    "question": "Jika $f(x) = 3x - 7$, nilai dari $f^{-1}(8)$ adalah...",
+    "options": [
+      "$5$",
+      "$4$",
+      "$3$",
+      "$2$",
+      "$1$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Invers Fungsi",
+    "question": "Diketahui $f(x) = \\sqrt{2x + 6}$. Invers fungsi $f^{-1}(x)$ adalah...",
+    "options": [
+      "$\\frac{x^2 - 6}{2}$",
+      "$\\frac{x^2 + 6}{2}$",
+      "$2x^2 - 6$",
+      "$2x^2 + 6$",
+      "$\\frac{(x - 6)^2}{2}$"
+    ],
+    "answer": 0
+  }
+]

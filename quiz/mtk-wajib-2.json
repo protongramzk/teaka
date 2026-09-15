@@ -1,0 +1,122 @@
+[
+  {
+    "category": "Operasi Biner",
+    "question": "Operasi $\\ast$ pada himpunan bilangan real didefinisikan sebagai $a \\ast b = a^2 - 2b$. Nilai dari $(3 \\ast 2) \\ast 4$ adalah...",
+    "options": [
+      "$1$",
+      "$3$",
+      "$5$",
+      "$7$",
+      "$9$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Operasi Biner",
+    "question": "Operasi $\\odot$ didefinisikan dengan $x \\odot y = \\frac{xy}{x + y}$ untuk $x + y \\neq 0$. Nilai dari $6 \\odot 3$ adalah...",
+    "options": [
+      "$1$",
+      "$2$",
+      "$3$",
+      "$4$",
+      "$9$"
+    ],
+    "answer": 1
+  },
+  {
+    "category": "Eksponen",
+    "question": "Bentuk sederhana dari $\\left( \\frac{a^3 b^{-2}}{a^{-1} b^4} \\right)^{-2}$ adalah...",
+    "options": [
+      "$\\frac{b^{12}}{a^8}$",
+      "$\\frac{a^8}{b^{12}}$",
+      "$\\frac{b^6}{a^4}$",
+      "$\\frac{a^4}{b^6}$",
+      "$a^8 b^{12}$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Eksponen",
+    "question": "Nilai dari $x$ yang memenuhi persamaan $9^{2x - 1} = 27^{x + 2}$ adalah...",
+    "options": [
+      "$8$",
+      "$6$",
+      "$4$",
+      "$2$",
+      "$0$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Eksponen",
+    "question": "Himpunan penyelesaian dari persamaan eksponen $2^{2x} - 6 \\cdot 2^x + 8 = 0$ adalah...",
+    "options": [
+      "\\{1, 2\\}",
+      "\\{2, 4\\}",
+      "\\{0, 3\\}",
+      "\\{1, 3\\}",
+      "\\{-1, 2\\}"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Persamaan & Pertidaksamaan",
+    "question": "Penyelesaian dari pertidaksamaan $|2x - 3| < 7$ adalah...",
+    "options": [
+      "$-2 < x < 5$",
+      "$-5 < x < 2$",
+      "$x < -2 \\text{ atau } x > 5$",
+      "$x < -5 \\text{ atau } x > 2$",
+      "$-2 \\le x \\le 5$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Persamaan & Pertidaksamaan",
+    "question": "Himpunan penyelesaian dari pertidaksamaan rasional $\\frac{x - 2}{x + 4} \\le 0$ adalah...",
+    "options": [
+      "$-4 < x \\le 2$",
+      "$-4 \\le x \\le 2$",
+      "$x < -4 \\text{ atau } x \\ge 2$",
+      "$x \\le -4 \\text{ atau } x \\ge 2$",
+      "$2 \\le x < 4$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Persamaan & Pertidaksamaan",
+    "question": "Nilai $x$ yang memenuhi persamaan kuadrat $x^2 - 5x - 14 = 0$ adalah...",
+    "options": [
+      "$x = 7 \\text{ atau } x = -2$",
+      "$x = -7 \\text{ atau } x = 2$",
+      "$x = 7 \\text{ atau } x = 2$",
+      "$x = -7 \\text{ atau } x = -2$",
+      "$x = 14 \\text{ atau } x = -1$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Persamaan & Pertidaksamaan",
+    "question": "Penyelesaian dari pertidaksamaan kuadrat $x^2 - 3x - 10 > 0$ adalah...",
+    "options": [
+      "$x < -2 \\text{ atau } x > 5$",
+      "$-2 < x < 5$",
+      "$x < -5 \\text{ atau } x > 2$",
+      "$-5 < x < 2$",
+      "$x \\le -2 \\text{ atau } x \\ge 5$"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "Persamaan & Pertidaksamaan",
+    "question": "Jika sistem persamaan linear $\\begin{cases} 2x + y = 9 \\\\ x - 3y = -6 \\end{cases}$ memiliki penyelesaian $(x, y)$, maka nilai dari $x + 2y$ adalah...",
+    "options": [
+      "$9$",
+      "$7$",
+      "$8$",
+      "$10$",
+      "$5$"
+    ],
+    "answer": 0
+  }
+]

@@ -1,0 +1,176 @@
+[
+  {
+    "question": "Hitunglah nilai dari limit fungsi aljabar berikut:\n$$\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3}$$",
+    "type": "single",
+    "answer": [
+      "$0$",
+      "$3$",
+      "$6$",
+      "$\\infty$"
+    ],
+    "trueAnswer": 2
+  },
+  {
+    "question": "Berapakah nilai limit trigonometri di bawah ini?\n$$\\lim_{x \\to 0} \\frac{\\sin(4x)}{2x}$$",
+    "type": "single",
+    "answer": [
+      "$1$",
+      "$2$",
+      "$4$",
+      "$8$"
+    ],
+    "trueAnswer": 1
+  },
+  {
+    "question": "Hitunglah nilai limit tak hingga berikut:\n$$\\lim_{x \\to \\infty} \\frac{5x^3 - 2x + 1}{2x^3 + 4x^2 - 7}$$",
+    "type": "single",
+    "answer": [
+      "$\\frac{5}{2}$",
+      "$\\frac{1}{2}$",
+      "$0$",
+      "$\\infty$"
+    ],
+    "trueAnswer": 0
+  },
+  {
+    "question": "Manakah dari pernyataan limit berikut yang **benar**? *(Pilih semua yang sesuai)*",
+    "type": "multiple",
+    "answer": [
+      "$$\\lim_{x \\to 0} \\frac{1 - \\cos(x)}{x} = 0$$",
+      "$$\\lim_{x \\to \\infty} \\left(1 + \\frac{1}{x}\\right)^x = e$$",
+      "$$\\lim_{x \\to 2} \\frac{x^2 - 4}{x + 2} = 4$$",
+      "$$\\lim_{x \\to 0} \\frac{\\tan(3x)}{\\sin(3x)} = 1$$"
+    ],
+    "trueAnswer": [
+      0,
+      1,
+      3
+    ]
+  },
+  {
+    "question": "Diberikan fungsi $f(x) = (2x^2 - 3)^4$. Turunan pertama $f'(x)$ adalah...",
+    "type": "single",
+    "answer": [
+      "$f'(x) = 16x(2x^2 - 3)^3$",
+      "$f'(x) = 8x(2x^2 - 3)^3$",
+      "$f'(x) = 4(2x^2 - 3)^3$",
+      "$f'(x) = 16x^2(2x^2 - 3)^3$"
+    ],
+    "trueAnswer": 0
+  },
+  {
+    "question": "Tentukan turunan pertama dari fungsi trigonometri $g(x) = x^2 \\cdot \\sin(x)$.",
+    "type": "single",
+    "answer": [
+      "$g'(x) = 2x \\cdot \\cos(x)$",
+      "$g'(x) = 2x \\sin(x) + x^2 \\cos(x)$",
+      "$g'(x) = 2x \\sin(x) - x^2 \\cos(x)$",
+      "$g'(x) = x^2 \\cos(x)$"
+    ],
+    "trueAnswer": 1
+  },
+  {
+    "question": "Sebuah partikel bergerak dengan persamaan lintasan $s(t) = t^3 - 6t^2 + 9t + 2$ (dalam meter dan detik). Tentukan waktu $t$ saat partikel berada dalam keadaan **diam** ($v(t) = 0$).",
+    "type": "single",
+    "answer": [
+      "$t = 1 \\text{ detik dan } t = 3 \\text{ detik}$",
+      "$t = 2 \\text{ detik dan } t = 4 \\text{ detik}$",
+      "$t = 3 \\text{ detik saja}$",
+      "$t = 0 \\text{ detik}$"
+    ],
+    "trueAnswer": 0
+  },
+  {
+    "question": "Diketahui fungsi $h(x) = \\frac{1}{3}x^3 - 2x^2 - 5x + 10$. Pilihlah **semua** pernyataan yang **benar** berikut!",
+    "type": "multiple",
+    "answer": [
+      "Turunan pertama $h'(x) = x^2 - 4x - 5$",
+      "Fungsi $h(x)$ mencapai nilai stasioner di $x = 5$ dan $x = -1$",
+      "Fungsi $h(x)$ selalu naik pada interval $-1 < x < 5$",
+      "Titik belok fungsi berada pada $x = 2$"
+    ],
+    "trueAnswer": [
+      0,
+      1,
+      3
+    ]
+  },
+  {
+    "question": "\nSebuah percetakan memiliki dua cabang toko (Toko A dan Toko B) yang menjual buku naskah dan buku latihan. \n\n* **Toko A** menjual 40 buku naskah dan 20 buku latihan.\n* **Toko B** menjual 30 buku naskah dan 50 buku latihan.\n\nJika harga 1 buku naskah adalah **Rp15.000** dan 1 buku latihan adalah **Rp10.000**, maka matriks total pendapatan masing-masing toko dapat dihitung dengan perkalian matriks:\n$$P = \\begin{pmatrix} 40 & 20 \\\\ 30 & 50 \\end{pmatrix} \\begin{pmatrix} 15.000 \\\\ 10.000 \\end{pmatrix}$$\n\nBerapakah total pendapatan untuk **Toko A** dan **Toko B** berturut-turut?\n",
+    "type": "single",
+    "answer": [
+      "Rp800.000 dan Rp950.000",
+      "Rp700.000 dan Rp850.000",
+      "Rp800.000 dan Rp900.000",
+      "Rp750.000 dan Rp1.000.000"
+    ],
+    "trueAnswer": 0
+  },
+  {
+    "question": "\nTim pengembang game sedang mengatur transformasi posisi karakter menggunakan operasi matriks $2 \\times 2$. \n\nJika posisi awal titik koordinat karakter dinyatakan oleh $A(x,y)$ dan ditransformasikan oleh matriks $T = \\begin{pmatrix} 2 & 1 \\\\ 0 & 3 \\end{pmatrix}$ menghasilkan posisi baru $A'(8, 15)$.\n\nManakah pernyataan berikut yang **benar** terkait matriks dan koordinat awal karakter? *(Pilih lebih dari satu)*\n",
+    "type": "multiple",
+    "answer": [
+      "Koordinat awal karakter adalah $x = 1$ dan $y = 5$",
+      "Determinant dari matriks transformasi $T$ adalah $6$",
+      "Matriks $T$ tidak memiliki invers karena $|T| = 0$",
+      "Invers matriks $T^{-1} = \\frac{1}{6}\\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix}$"
+    ],
+    "trueAnswer": [
+      0,
+      1,
+      3
+    ]
+  },
+  {
+    "question": "\nDi sebuah kedai kopi, **Rian** membeli 3 cangkir Kopi Susu dan 2 Roti Bakar dengan total harga **Rp65.000**. \nDi kedai yang sama, **Siti** membeli 2 cangkir Kopi Susu dan 4 Roti Bakar dengan total harga **Rp70.000**.\n\nBerapakah harga untuk **1 cangkir Kopi Susu** dan **1 Roti Bakar**?\n",
+    "type": "single",
+    "answer": [
+      "Kopi Susu = Rp15.000, Roti Bakar = Rp10.000",
+      "Kopi Susu = Rp18.000, Roti Bakar = Rp8.000",
+      "Kopi Susu = Rp12.000, Roti Bakar = Rp11.000",
+      "Kopi Susu = Rp20.000, Roti Bakar = Rp5.000"
+    ],
+    "trueAnswer": 0
+  },
+  {
+    "question": "\nSebuah tempat parkir mengelompokkan kendaraan menjadi mobil ($x$) dan sepeda motor ($y$). \n\n* Jumlah total kendaraan yang terparkir adalah $80$ unit.\n* Total jumlah roda seluruh kendaraan (tanpa roda cadangan) adalah $220$ buah.\n\nPilihlah **semua** pernyataan yang **benar** di bawah ini!\n",
+    "type": "multiple",
+    "answer": [
+      "Model sistem persamaan linear dua variabelnya adalah $x + y = 80$ dan $4x + 2y = 220$",
+      "Banyaknya mobil yang terparkir adalah $30$ unit",
+      "Banyaknya sepeda motor yang terparkir adalah $50$ unit",
+      "Jika tarif parkir mobil Rp5.000 dan motor Rp2.000, total pendapatan parkir adalah Rp250.000"
+    ],
+    "trueAnswer": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "question": "\nSuatu toko bahan bangunan menjual paket cat dinding (A, B, dan C).\n\n* **Paket 1** (1 kaleng A, 2 kaleng B, 1 kaleng C) berharga **Rp170.000**.\n* **Paket 2** (2 kaleng A, 1 kaleng B, 1 kaleng C) berharga **Rp190.000**.\n* **Paket 3** (1 kaleng A, 1 kaleng B, 2 kaleng C) berharga **Rp180.000**.\n\nBerapakah harga masing-masing kaleng cat **A, B, dan C**?\n",
+    "type": "single",
+    "answer": [
+      "A = Rp50.000, B = Rp30.000, C = Rp60.000",
+      "A = Rp60.000, B = Rp40.000, C = Rp30.000",
+      "A = Rp50.000, B = Rp40.000, C = Rp40.000",
+      "A = Rp55.000, B = Rp35.000, C = Rp45.000"
+    ],
+    "trueAnswer": 0
+  },
+  {
+    "question": "\nTiga bersaudara **Andi** ($x$), **Budi** ($y$), dan **Caca** ($z$) mengumpulkan uang untuk hadiah ulang tahun ibu.\n\n* Jumlah uang Andi, Budi, dan Caca adalah **Rp450.000**.\n* Uang Budi Rp50.000 lebih banyak dari uang Caca.\n* Jumlah uang Andi dan Caca sama dengan jumlah uang Budi.\n\nManakah analisis yang **benar** terkait jumlah uang mereka? *(Pilih lebih dari satu)*\n",
+    "type": "multiple",
+    "answer": [
+      "Uang Andi adalah $x = \\text{Rp175.000}$",
+      "Uang Budi adalah $y = \\text{Rp225.000}$",
+      "Uang Caca adalah $z = \\text{Rp175.000}$",
+      "Model matematikan untuk kalimat kedua adalah $y - z = 50.000$"
+    ],
+    "trueAnswer": [
+      1,
+      3
+    ]
+  }
+]

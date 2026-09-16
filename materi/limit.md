@@ -1,37 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Limit Fungsi Aljabar & Trigonometri - TeakaLearn</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" />
-  
-  <!-- Modern Material You Stylesheet -->
-  <link rel="stylesheet" href="/lib/mat.css">
-</head>
-<body>
-
-  <!-- Top Bar Navbar -->
-  <header class="top-app-bar">
-    <a href="index.html" class="btn-back">
-      <span class="material-symbols-outlined">arrow_back</span>
-      Kembali
-    </a>
-  </header>
-
-  <!-- Container Target Render -->
-  <main class="materi-container">
-    <article class="materi-body" id="materi-render-target">
-      <!-- Hasil render Markdown & LaTeX akan muncul di sini -->
-    </article>
-  </main>
-
-  <!-- SOURCE MATERI (Markdown + LaTeX) -->
-  <script id="materi-source" type="text/markdown">
 # Limit Fungsi Aljabar & Trigonometri
 
 Limit menjelaskan perilaku suatu fungsi ketika variabelnya mendekati nilai tertentu secara spesifik.
@@ -79,9 +45,3 @@ Dengan menerapkan sifat dasar limit trigonometri:
 $$\lim_{x \to 0} \frac{\sin 6x}{\tan 2x} = \frac{6}{2} = 3$$
 
 > **Ingat:** Sifat dasar ini **hanya berlaku** untuk fungsi $\sin$ dan $\tan$ ketika mendekati $0$. Jika terdapat fungsi $\cos$, ubah terlebih dahulu menggunakan identitas trigonometri seperti $\cos 2x = 1 - 2\sin^2 x$.
-  </script>
-
-  <!-- Engine Renderer JS -->
-  <script src="/lib/render-mat.js"></script>
-</body>
-</html>

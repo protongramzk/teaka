@@ -1,37 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matriks & Sistem Persamaan Linear - TeakaLearn</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" />
-  
-  <!-- Modern Material You Stylesheet -->
-  <link rel="stylesheet" href="/lib/mat.css">
-</head>
-<body>
-
-  <!-- Top Bar Navbar -->
-  <header class="top-app-bar">
-    <a href="index.html" class="btn-back">
-      <span class="material-symbols-outlined">arrow_back</span>
-      Kembali
-    </a>
-  </header>
-
-  <!-- Container Target Render -->
-  <main class="materi-container">
-    <article class="materi-body" id="materi-render-target">
-      <!-- Hasil render Markdown & LaTeX akan muncul di sini -->
-    </article>
-  </main>
-
-  <!-- SOURCE MATERI (Markdown + LaTeX) -->
-  <script id="materi-source" type="text/markdown">
 # Matriks & Sistem Persamaan Linear
 
 Matriks adalah susunan bilangan yang diatur dalam baris dan kolom serta diapit oleh tanda kurung. 
@@ -82,9 +48,3 @@ Untuk mencari nilai $x$ dan $y$, gunakan rumus invers:
 $$\begin{pmatrix} x \\ y \end{pmatrix} = \frac{1}{ad - bc} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \begin{pmatrix} p \\ q \end{pmatrix}$$
 
 > **Catatan:** Jika determinan matriks koefisien $= 0$, maka sistem persamaan tersebut **tidak memiliki penyelesaian** atau memiliki **banyak penyelesaian tak hingga**.
-  </script>
-
-  <!-- Engine Renderer JS -->
-  <script src="/lib/render-mat.js"></script>
-</body>
-</html>
